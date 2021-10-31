@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   test.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 17:02:53 by itkimura          #+#    #+#             */
-/*   Updated: 2021/10/31 22:25:06 by itkimura         ###   ########.fr       */
+/*   Created: 2021/10/31 22:57:05 by itkimura          #+#    #+#             */
+/*   Updated: 2021/10/31 23:07:26 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TEST_H
+# define TEST_H
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	while (*s1 || *s2)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
-}
+# include <unistd.h>
+# include <stdlib.h>
+# include <string.h>
+
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
+
+int	ft_strcmp(const char *s1, const char *s2);
+size_t	ft_strlen(const char *s);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
+#endif

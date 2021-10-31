@@ -1,25 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 17:02:53 by itkimura          #+#    #+#             */
-/*   Updated: 2021/10/31 22:25:06 by itkimura         ###   ########.fr       */
+/*   Created: 2021/10/31 20:35:03 by itkimura          #+#    #+#             */
+/*   Updated: 2021/10/31 23:02:45 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	ft_putchar(char c)
 {
-	while (*s1 || *s2)
-	{
-		if (*s1 != *s2)
-			return (*s1 - *s2);
-		s1++;
-		s2++;
-	}
-	return (0);
+	write(1, &c, 1);
 }
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		ft_putchar(*str);
+		str++;
+	}
+}
+
+void	ft_putnbr(int nb)
+{
+	long	i;
+
+	i = nb;
+	if (i < 0)
+	{
+		ft_putchar('-');
+		i *= -1;
+	}
+	if (i >= 10)
+	{
+		ft_putnbr(i / 10);
+		ft_putnbr(i % 10);
+	}
+	else
+		ft_putchar(i + '0');
+}
+;

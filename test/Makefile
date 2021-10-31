@@ -5,28 +5,26 @@
 #                                                     +:+ +:+         +:+      #
 #    By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/10/31 22:14:13 by itkimura          #+#    #+#              #
-#    Updated: 2021/10/31 22:21:43 by itkimura         ###   ########.fr        #
+#    Created: 2021/10/31 22:10:22 by itkimura          #+#    #+#              #
+#    Updated: 2021/10/31 23:03:03 by itkimura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc -Wall -Wextra -Werror
-NAME = libft.a
 SRCS = *.c
-OBJS = *.o
+LIB = -L.. -lft
+NAME = test
+HEADER = -I.
 
 all: $(NAME)
 
 $(NAME):
-	$(CC) -c $(SRCS)
-	ar rc $(NAME) $(OBJS)
+	$(CC) $(HEADER) $(SRCS) $(LIB) -o $(NAME)
 
 clean:
-	rm -f $(OBJS)
 
 fclean:
-	make clean
-	rm -f $(NAME)
+	rm $(NAME)
 
 re: fclean all
 
