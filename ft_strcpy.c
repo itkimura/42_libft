@@ -1,47 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 20:35:03 by itkimura          #+#    #+#             */
-/*   Updated: 2021/10/31 23:02:45 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/01 17:46:41 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/01 17:57:45 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "test.h"
-
-void	ft_putchar(char c)
+char	*ft_stpcpy(char *dst, const char *src)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putstr(char *str)
-{
-	while (*str)
+	i = 0;
+	while (*src)
 	{
-		ft_putchar(*str);
-		str++;
+		dst[i] = *src;
+		src++;
+		i++;
 	}
+	dst[i] = '\0';
+	return (dst);
 }
-
-void	ft_putnbr(int nb)
-{
-	long	i;
-
-	i = nb;
-	if (i < 0)
-	{
-		ft_putchar('-');
-		i *= -1;
-	}
-	if (i >= 10)
-	{
-		ft_putnbr(i / 10);
-		ft_putnbr(i % 10);
-	}
-	else
-		ft_putchar(i + '0');
-}
-;
