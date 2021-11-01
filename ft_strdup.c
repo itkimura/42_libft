@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:06:54 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/01 15:29:27 by itkimura         ###   ########.fr       */
+/*   Created: 2021/10/28 17:48:43 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/01 17:06:05 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <stdlib.h>
 
-# include <unistd.h>
-# include <stdlib.h>
+int	ft_strlen(const char *str)
+{
+	int	len;
 
-int		ft_strcmp(const char *s1, const char *s2);
-size_t	ft_strlen(const char *s);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_atoi(const char *str);
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
 
-#endif
+char	*ft_strdup(const char *s1)
+{
+	char	*dest;
+	int		i;
+
+	i = 0;
+	dest = (char *)malloc(ft_strlen(s1) + 1);
+	while (s1[i])
+	{
+		dest[i] = s1[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
