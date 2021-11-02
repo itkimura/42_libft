@@ -6,21 +6,11 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:48:43 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/01 17:06:05 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/02 11:41:51 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-int	ft_strlen(const char *str)
-{
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
+#include "libft.h" 
 
 char	*ft_strdup(const char *s1)
 {

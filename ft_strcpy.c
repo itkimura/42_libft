@@ -6,11 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 17:46:41 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/01 17:57:45 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/02 13:57:05 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_stpcpy(char *dst, const char *src)
+#include "libft.h"
+
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int	i;
 

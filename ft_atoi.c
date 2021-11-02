@@ -6,16 +6,11 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:27:13 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/01 16:58:15 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/02 12:18:52 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
 
 const char	*ft_isspace(const char *str, int *flag)
 {
