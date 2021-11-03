@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 16:03:23 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/03 16:39:22 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/03 16:29:01 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/03 18:28:58 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
 {
-	int	len;
+	int	dstlen;
+	size_t	i;
 
-	len = 0;
-	if (!s)
-		return (0);
-	while (s[len])
-		len++;
-	return (len);
+	i = 0;
+	dstlen = ft_strlen(s1);
+	while (i < n)
+		s1[dstlen++] = s2[i++];
+	s1[dstlen + i] = '\0';
+	return (s1);
 }

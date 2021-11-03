@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:27:13 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/02 12:18:52 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/03 16:39:02 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_atoi(const char *str)
 
 	dest = 0;
 	str = ft_isspace(str, &flag);
-	if(*str >= '0' && *str <= '9')
+	if (*str >= '0' && *str <= '9')
 	{
 		while (*str >= '0' && *str <= '9')
 		{
