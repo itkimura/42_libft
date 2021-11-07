@@ -6,11 +6,11 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 14:21:24 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/04 22:19:42 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/07 17:40:18 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
