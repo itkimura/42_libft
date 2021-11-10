@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:06:54 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/09 11:23:16 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:42:30 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 
 void	*ft_memset(void *b, int c, size_t len);
+void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 char	*ft_strcpy(char *dst, const char *src);

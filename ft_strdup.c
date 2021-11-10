@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:48:43 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/02 11:41:51 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/10 19:36:58 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strdup(const char *s1)
 
 	i = 0;
 	dest = (char *)malloc(ft_strlen(s1) + 1);
+	if (!dest)
+		return (0);
 	while (s1[i])
 	{
 		dest[i] = s1[i];

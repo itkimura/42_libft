@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 16:23:13 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/10 19:45:02 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/10 18:21:58 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/10 18:42:49 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	else
-		return (0);
+	ft_memset(s, 0, n);
 }

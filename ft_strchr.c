@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 12:20:55 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/08 12:47:22 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:49:58 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,8 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	return (0);
+	if (!c)
+		return ((char *)s);
+	else
+		return (0);
 }
