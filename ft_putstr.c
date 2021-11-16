@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:54:37 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/16 12:20:38 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/16 16:17:58 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr(char const *s)
 {
-	while (*s)
-		write(1, s++, 1);
+	if (s)
+	{
+		while (*s)
+			write(1, s++, 1);
+	}
 }
