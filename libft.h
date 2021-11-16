@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:06:54 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/15 16:47:26 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/16 12:18:20 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,9 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
+void	ft_putnbr(int nb);
 
 #endif
