@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:57:01 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/16 12:04:11 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:43:46 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	*ft_memalloc(size_t size)
 {
 	void	*str;
 
-	if (!(str = malloc(size)))
+	str = malloc(size);
+	if (!str)
 		return (0);
 	else
 		ft_bzero(str, ft_strlen(str));

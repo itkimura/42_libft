@@ -6,24 +6,24 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 16:29:01 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/10 19:43:10 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/17 16:03:10 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *restrict s1, const char *restrict s2, size_t n)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	int	dstlen;
+	int		len;
 	size_t	i;
 
 	i = 0;
-	dstlen = ft_strlen(s1);
+	len = ft_strlen(s1);
 	while (i < n && s2[i])
 	{
-		s1[dstlen + i] = s2[i];
+		s1[len + i] = s2[i];
 		i++;
 	}
-	s1[dstlen + i] = '\0';
+	s1[len + i] = '\0';
 	return (s1);
 }

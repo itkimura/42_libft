@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 14:13:32 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/15 15:53:08 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:45:25 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,14 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (len)
 		{
-			((char*)dst)[len - 1] = ((char*)src)[len - 1];
+			((char *)dst)[len - 1] = ((char *)src)[len - 1];
 			len--;
 		}
 	}
 	while (i < len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
-	
+	{
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
+	}
 	return (dst);
 }

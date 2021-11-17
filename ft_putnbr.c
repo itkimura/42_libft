@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:56:18 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/16 11:56:35 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:46:59 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int nb)
 {
-	long i;
+	long	i;
 
 	i = nb;
 	if (i < 0)

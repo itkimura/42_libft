@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 13:54:27 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/15 14:10:38 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/17 15:58:01 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	srclen;
+	int	len;
 
-	srclen = ft_strlen(s);
-	while (srclen >= 0)
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
-		if(s[srclen] == c)
-		return ((char *)&s[srclen]);
-		srclen--;
+		if (s[len] == c)
+			return ((char *)&s[len]);
+		len--;
 	}
 	return (0);
 }
