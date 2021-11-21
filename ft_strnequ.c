@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:54:27 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/21 12:05:50 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/21 01:35:22 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/21 01:37:07 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	int	len;
+	size_t	i;
 
-	len = ft_strlen(s);
-	while (len >= 0)
+	i = 0;
+	if (s1 && s2)
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
+		while ((s1[i] || s2[i]) && i < n)
+		{
+			if (s1[i] != s2[i])
+				return (0);
+			i++;
+		}
+		return (1);
 	}
 	return (0);
 }

@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:54:27 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/21 12:05:50 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/21 01:26:28 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/21 01:34:03 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_strequ(char const *s1, char const *s2)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	while (len >= 0)
+	if (s1 && s2)
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
+		while (*s1 || *s2)
+		{
+			if (*s1 != *s2)
+				return (0);
+			s1++;
+			s2++;
+		}
+		return (1);
 	}
 	return (0);
 }

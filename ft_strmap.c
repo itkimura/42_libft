@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:54:27 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/21 12:05:50 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/20 22:53:45 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/21 01:20:43 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int	len;
+	char	*dst;
+	int		i;
 
-	len = ft_strlen(s);
-	while (len >= 0)
+	i = 0;
+	if (!s)
+		return (0);
+	dst = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	if (!dst)
+		return (0);
+	while (s[i])
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
+		dst[i] = f(s[i]);
+		i++;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (dst);
 }

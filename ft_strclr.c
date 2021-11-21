@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/08 13:54:27 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/21 12:05:50 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/20 22:43:42 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/20 22:49:08 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_strclr(char *s)
 {
-	int	len;
-
-	len = ft_strlen(s);
-	while (len >= 0)
+	if (s)
 	{
-		if (s[len] == c)
-			return ((char *)&s[len]);
-		len--;
+		while(*s)
+		*s++ = '\0';
 	}
-	return (0);
 }
