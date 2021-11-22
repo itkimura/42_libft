@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:06:54 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/20 22:45:29 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/22 22:18:07 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putnbr(int nb);
 
+void ft_putchar_fd(char c, int fd);
+void ft_putstr_fd(char const *s, int fd);
+void ft_putnbr_fd(int n, int fd);
 #endif
