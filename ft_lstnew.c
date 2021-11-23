@@ -1,22 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 20:53:28 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/23 14:32:15 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/23 16:31:09 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/23 16:32:07 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+t_list *  ft_lstnew(void const *content, size_t content_size)
 {
-	if (s)
-	{
-		while (*s)
-			write(fd, s++, 1);
-	}
-}

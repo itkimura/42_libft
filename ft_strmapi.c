@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 01:21:12 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/21 01:25:47 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:31:21 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
-	char *dst;
+	int		i;
+	char	*dst;
 
 	i = 0;
 	if (!s)

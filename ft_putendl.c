@@ -6,13 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:31:19 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/22 20:32:11 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/23 13:08:24 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
 	ft_putstr(s);
 	ft_putchar('\n');

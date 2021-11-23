@@ -6,13 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 11:56:18 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/22 22:18:47 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:29:07 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	long	i;
 

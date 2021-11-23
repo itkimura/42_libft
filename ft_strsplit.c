@@ -6,13 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:59:30 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/22 20:28:49 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/23 16:52:42 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		count_array(char const *s, char c)
+int	count_array(char const *s, char c)
 {
 	int	count;
 	int	i;
@@ -26,25 +26,38 @@ int		count_array(char const *s, char c)
 		if (s[i] != c && s[i])
 			count++;
 		while (s[i] != c && s[i])
-				i++;
+			i++;
 	}
 	return (count);
 }
 
-int		array_len(char const *s, char c)
+int	array_len(char const *s, char **str, char c, int array)
 {
 	int	len;
 
 	len = 0;
 	while (s[len] != c && s[len])
 		len++;
-	return (len);
+	str[array] = (char *)malloc(sizeof(char) * len + 1);
+	if (!str)
+	{
+		while (str[array])
+		{
+			free(str[array]);
+			str[array] = 0;
+			array--;
+		}
+		free(str);
+		str = 0;
+		return (0);
+	}
+	else
+		return (1);
 }
 
 char	**fill_array(char **str, char const *s, char c)
 {
 	int	array;
-	int	len;
 	int	i;
 
 	array = 0;
@@ -54,21 +67,16 @@ char	**fill_array(char **str, char const *s, char c)
 			s++;
 		if (*s != c && *s)
 		{
-			len = array_len(s, c);
-			str[array] = (char *)malloc(sizeof(char) * len + 1);
-			if (!str)
+			i = -1;
+			if (!array_len(s, str, c, array))
 				return (0);
-			i = 0;
-			while (s[i] != c)
-			{
+			while (s[++i] != c)
 				str[array][i] = s[i];
-				i++;
-			}
 			str[array][i] = '\0';
 			array++;
 		}
 		while (*s != c && *s)
-				s++;
+			s++;
 	}
 	str[array] = 0;
 	return (str);
@@ -76,9 +84,9 @@ char	**fill_array(char **str, char const *s, char c)
 
 char	**ft_strsplit(char const *s, char c)
 {
-	char **str;
+	char	**str;
 
-	if (!s || !c)
+	if (!s)
 		return (0);
 	str = (char **)malloc(sizeof(char *) * (count_array(s, c) + 1));
 	if (!str)
