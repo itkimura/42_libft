@@ -6,16 +6,16 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/01 15:27:13 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/10 19:56:22 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:16:27 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-const char	*ft_isspace(const char *str, int *flag)
+static const char	*remove_space(const char *str, int *flag)
 {
 	*flag = 1;
-	while (*str == ' ' || (*str >= '\t' && *str <= '\r'))
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-' || *str == '+')
 	{
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 	int	dest;
 
 	dest = 0;
-	str = ft_isspace(str, &flag);
+	str = remove_space(str, &flag);
 	if (*str >= '0' && *str <= '9')
 	{
 		while (*str >= '0' && *str <= '9')

@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/16 11:57:01 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/29 16:17:17 by itkimura         ###   ########.fr       */
+/*   Created: 2021/11/29 16:16:52 by itkimura          #+#    #+#             */
+/*   Updated: 2021/11/29 16:16:55 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+int	ft_isspace(char c)
 {
-	void	*str;
-
-	str = malloc(size);
-	if (!str)
-		return (0);
+	if (c == ' ' || (c >= '\t' && c <= '\r'))
+		return (1);
 	else
-		ft_bzero(str, size);
-	return (str);
+		return (0);
 }

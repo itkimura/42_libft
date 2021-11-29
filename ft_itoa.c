@@ -6,13 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 14:30:56 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/17 15:43:20 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:25:42 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	number_of_digit(int n)
+static int	number_of_digit(int n)
 {
 	int	len;
 

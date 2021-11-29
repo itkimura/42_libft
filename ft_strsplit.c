@@ -6,13 +6,13 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:59:30 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/23 16:52:42 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:15:36 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_array(char const *s, char c)
+static int	count_array(char const *s, char c)
 {
 	int	count;
 	int	i;
@@ -31,7 +31,7 @@ int	count_array(char const *s, char c)
 	return (count);
 }
 
-int	array_len(char const *s, char **str, char c, int array)
+static int	array_len(char const *s, char **str, char c, int array)
 {
 	int	len;
 
@@ -55,7 +55,7 @@ int	array_len(char const *s, char **str, char c, int array)
 		return (1);
 }
 
-char	**fill_array(char **str, char const *s, char c)
+static char	**fill_array(char **str, char const *s, char c)
 {
 	int	array;
 	int	i;
@@ -70,7 +70,7 @@ char	**fill_array(char **str, char const *s, char c)
 			i = -1;
 			if (!array_len(s, str, c, array))
 				return (0);
-			while (s[++i] != c)
+			while (s[++i] != c && s[i])
 				str[array][i] = s[i];
 			str[array][i] = '\0';
 			array++;
