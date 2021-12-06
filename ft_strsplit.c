@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 15:59:30 by itkimura          #+#    #+#             */
-/*   Updated: 2021/12/06 19:44:19 by itkimura         ###   ########.fr       */
+/*   Updated: 2021/12/06 20:56:29 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,16 +67,32 @@ char	**ft_strsplit(char const *s, char c)
 		while (*s && *s == c)
 			s++;
 		len = word_len(s, c);
-		str[array] = ft_strnew(len);
+		str[array] = ft_strsub(s, 0, len);
 		if (!str[array])
 		{
 			free_array(str, array);
 			return (0);
 		}
-		ft_strncpy(str[array], s, len);
 		while (*s && *s != c)
 			s++;
 		array++;
 	}
+	str[array] = 0;
 	return (str);
 }
+/*
+#include <stdio.h>
+int	main(void)
+{
+	char *s = "      split       this for   me  !       ";
+	char **dst;
+
+	dst = ft_strsplit(s, ' ');
+
+	while (*dst)
+	{
+		printf("dst = %s\n", *dst);
+		dst++;
+	}
+	return (0);
+}*/
