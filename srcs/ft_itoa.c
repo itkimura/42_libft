@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 14:30:56 by itkimura          #+#    #+#             */
-/*   Updated: 2021/11/29 16:25:42 by itkimura         ###   ########.fr       */
+/*   Updated: 2022/02/09 16:48:49 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ char	*ft_itoa(int n)
 {
 	int		len;
 	long	nb;
-	int		i;
 	char	*str;
 
-	i = 0;
 	if (n == 0)
 		return (ft_strdup("0"));
 	len = number_of_digit(n) + 1;
