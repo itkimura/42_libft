@@ -6,15 +6,22 @@
 #    By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/31 22:14:13 by itkimura          #+#    #+#              #
-#    Updated: 2022/08/17 10:43:34 by itkimura         ###   ########.fr        #
+#    Updated: 2022/08/17 12:51:10 by itkimura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# TARGET
 NAME	= libft.a
-OBJ_DIR	= ./objects/
-INC_DIR	= ./includes/
+
+# GCC
 CC		= gcc -Wall -Wextra -Werror
+
+# DIRECTORIES
+INC_DIR	= ./includes/
+OBJ_DIR	= ./objects/
 SRC_DIR = ./srcs/
+
+# FILES
 SRCS	=	ft_putchar.c	ft_putchar_fd.c		ft_putendl.c	ft_tolower.c	\
 			ft_putendl_fd.c	ft_putnbr.c			ft_putnbr_fd.c	ft_toupper.c	\
 			ft_putstr.c		ft_putstr_fd.c		ft_strlen.c		ft_atoi.c		\
@@ -30,13 +37,20 @@ SRCS	=	ft_putchar.c	ft_putchar_fd.c		ft_putendl.c	ft_tolower.c	\
 			ft_memdel.c		ft_memmove.c		ft_strmapi.c	ft_strmap.c		\
 			ft_strsplit.c	ft_lstnew.c			ft_lstadd.c		ft_lstdelone.c	\
 			ft_lstdel.c		ft_lstiter.c		ft_lstmap.c
-
 OBJ		= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
+
+# COLORS
+GREEN  := $(shell tput -Txterm setaf 2)
+YELLOW := $(shell tput -Txterm setaf 3)
+WHITE  := $(shell tput -Txterm setaf 7)
+RESET  := $(shell tput -Txterm sgr0)
+BOLD := $(shell tput bold)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)
+	@echo "${BOLD}[libft]${RESET}\t\tCompiled!"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
@@ -44,12 +58,12 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "[libft] Object files has been deleted"
+	@echo "${BOLD}[libft]${RESET}\t\tObject files has been deleted"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "[libft] Executable file has been deleted"
+	@echo "${BOLD}[libft]${RESET}\t\tExecutable file has been deleted"
 
-re: fclean all
+re: clean fclean all
 
 .PHONY: all clean fclean re
