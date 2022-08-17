@@ -6,7 +6,7 @@
 #    By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/31 22:14:13 by itkimura          #+#    #+#              #
-#    Updated: 2022/02/09 16:48:38 by itkimura         ###   ########.fr        #
+#    Updated: 2022/08/17 10:43:34 by itkimura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,11 +44,11 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@echo "Object files has been deleted"
+	@echo "[libft] Object files has been deleted"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "Executable file has been deleted"
+	@echo "[libft] Executable file has been deleted"
 
 re: fclean all
 
