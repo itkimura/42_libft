@@ -6,7 +6,7 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 16:06:54 by itkimura          #+#    #+#             */
-/*   Updated: 2022/08/24 11:04:56 by itkimura         ###   ########.fr       */
+/*   Updated: 2022/08/24 13:48:11 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
 int			ft_atoi(const char *str);
-long int	ft_atoli(const char *str);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
@@ -86,5 +85,6 @@ void		ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int			ft_isspace(char c);
+long int	ft_atoli(const char *str);
 
 #endif
