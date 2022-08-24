@@ -6,7 +6,7 @@
 #    By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/31 22:14:13 by itkimura          #+#    #+#              #
-#    Updated: 2022/08/24 13:47:39 by itkimura         ###   ########.fr        #
+#    Updated: 2022/08/24 14:45:41 by itkimura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,12 @@ SRCS	=	ft_putchar.c	ft_putchar_fd.c		ft_putendl.c	ft_tolower.c	\
 			ft_lstdel.c		ft_lstiter.c		ft_lstmap.c		ft_atoli.c
 OBJ		= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
+# GNT
+GNT = get_next_line
+GNT_DIR = ./get_next_line/
+GNT_SRC = get_next_line.c
+GNT_OBJS = $(addprefix $(OBJ_DIR), $(GNT_SRC:.c=.o))
+
 # COLORS
 GREEN  := $(shell tput -Txterm setaf 2)
 YELLOW := $(shell tput -Txterm setaf 3)
@@ -49,12 +55,14 @@ BOLD := $(shell tput bold)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $(OBJ)
+	@$(CC) -I$(INC_DIR) -I$(GNT_DIR) -o $(GNT_OBJS) -c $(GNT_DIR)$(GNT_SRC)
+	@ar rc $(NAME) $(OBJ) $(GNT_OBJS)
 	@echo "${BOLD}[libft]${RESET}\t\tCompiled!"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) -I$(INC_DIR) -o $@ -c $^
+	@$(CC) -I$(INC_DIR) -I$(GNT_DIR) -o $@ -c $^
+
 
 clean:
 	@rm -rf $(OBJ_DIR)
