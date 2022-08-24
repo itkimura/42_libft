@@ -6,7 +6,7 @@
 #    By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/31 22:14:13 by itkimura          #+#    #+#              #
-#    Updated: 2022/08/17 12:51:10 by itkimura         ###   ########.fr        #
+#    Updated: 2022/08/24 10:46:29 by itkimura         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ SRCS	=	ft_putchar.c	ft_putchar_fd.c		ft_putendl.c	ft_tolower.c	\
 			ft_striteri.c	ft_memalloc.c		ft_memchr.c		ft_memcmp.c		\
 			ft_memdel.c		ft_memmove.c		ft_strmapi.c	ft_strmap.c		\
 			ft_strsplit.c	ft_lstnew.c			ft_lstadd.c		ft_lstdelone.c	\
-			ft_lstdel.c		ft_lstiter.c		ft_lstmap.c
+			ft_lstdel.c		ft_lstiter.c		ft_lstmap.c		ft_atoli.c
 OBJ		= $(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
 # COLORS
