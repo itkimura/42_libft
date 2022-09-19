@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_Next_Line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:44:39 by itkimura          #+#    #+#             */
-/*   Updated: 2022/08/24 14:12:04 by itkimura         ###   ########.fr       */
+/*   Updated: 2022/09/18 09:33:30 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,11 @@ static int	cpy_line(const int fd, char **line, char **stack)
 	if (stack[fd][i] == '\n')
 	{
 		*line = ft_strsub(stack[fd], 0, i);
+		if (!line)
+			return (-1);
 		tmp = ft_strdup(stack[fd] + i + 1);
+		if (!tmp)
+			return (-1);
 		free(stack[fd]);
 		stack[fd] = tmp;
 		if (stack[fd][0] == '\0')
@@ -41,6 +45,8 @@ static int	cpy_line(const int fd, char **line, char **stack)
 	else
 	{
 		*line = ft_strdup(stack[fd]);
+		if (!line)
+			return (-1);
 		ft_strdel(&stack[fd]);
 	}
 	return (1);
