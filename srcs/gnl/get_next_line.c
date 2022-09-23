@@ -6,9 +6,11 @@
 /*   By: itkimura <itkimura@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/11 19:44:39 by itkimura          #+#    #+#             */
-/*   Updated: 2022/09/18 09:33:30 by itkimura         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:01:31 by itkimura         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 #include "get_next_line.h"
 
@@ -32,8 +34,6 @@ static int	cpy_line(const int fd, char **line, char **stack)
 	if (stack[fd][i] == '\n')
 	{
 		*line = ft_strsub(stack[fd], 0, i);
-		if (!line)
-			return (-1);
 		tmp = ft_strdup(stack[fd] + i + 1);
 		if (!tmp)
 			return (-1);
@@ -45,10 +45,10 @@ static int	cpy_line(const int fd, char **line, char **stack)
 	else
 	{
 		*line = ft_strdup(stack[fd]);
-		if (!line)
-			return (-1);
 		ft_strdel(&stack[fd]);
 	}
+	if (!*line)
+		return (-1);
 	return (1);
 }
 
@@ -64,7 +64,7 @@ static int	cpy_line(const int fd, char **line, char **stack)
 ** until we run out of stuff to read or we encounter \n in the read chars.
 */
 
-/* 
+/*
 ** return of read, -1: error 0:EOF  n > 0:How many byte have been read
 */
 static int	status_return(int ret, const int fd, char **line, char **stack)
@@ -77,31 +77,45 @@ static int	status_return(int ret, const int fd, char **line, char **stack)
 		return (cpy_line(fd, line, stack));
 }
 
+int	combine_stack(char **stack, char *buffer)
+{
+	char	*tmp;
+
+	if (*stack == NULL)
+	{
+		*stack = ft_strdup(buffer);
+		if (*stack == 0)
+			return (0);
+	}
+	else
+	{
+		tmp = ft_strjoin(*stack, buffer);
+		if (tmp == 0)
+			return (0);
+		free(*stack);
+		*stack = tmp;
+	}
+	return (1);
+}
+
 int	get_next_line(const int fd, char **line)
 {
 	int			ret;
 	static char	*stack[MAX_FD];
 	char		buffer[BUFF_SIZE + 1];
-	char		*tmp;
 
 	if (fd < 0 || line == 0)
 		return (-1);
 	if (stack[fd] && ft_strchr(stack[fd], '\n'))
-		return (cpy_line(fd, line,stack));
+		return (cpy_line(fd, line, stack));
 	while (1)
 	{
 		ret = read(fd, buffer, BUFF_SIZE);
 		if (ret <= 0)
 			break ;
 		buffer[ret] = '\0';
-		if (stack[fd] == NULL)
-			stack[fd] = ft_strdup(buffer);
-		else
-		{
-			tmp = ft_strjoin(stack[fd], buffer);
-			free(stack[fd]);
-			stack[fd] = tmp;
-		}
+		if (!combine_stack(&stack[fd], buffer))
+			return (-1);
 		if (ft_strchr(stack[fd], '\n'))
 			break ;
 	}
